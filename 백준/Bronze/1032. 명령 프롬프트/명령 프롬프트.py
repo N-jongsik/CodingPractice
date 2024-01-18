@@ -15,7 +15,7 @@ for char_index in range(len(string_lists[0])):
     mismatch = False
 
     for string_list in string_lists[1:]:
-        if char_index < len(string_list) and string_list[char_index] != current_char:
+        if string_list[char_index] != current_char:
             mismatch = True
             break
 
