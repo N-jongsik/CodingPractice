@@ -10,6 +10,7 @@ def solution(lottos, win_nums):
     best = cnt+k
     worst = k
     
-    answer.append(dict[best])
-    answer.append(dict[worst])
-    return answer
+    # answer.append(dict[best])
+    # answer.append(dict[worst])
+    # return answer
+    return [dict[best],dict[worst]]
