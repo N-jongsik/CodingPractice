@@ -20,22 +20,14 @@ public class Main {
 
         List<Integer> lst = new ArrayList<>(map.keySet());
 
-        Collections.sort(lst, new Comparator<Integer>(){
-            @Override
-            public int compare(Integer a, Integer b){
+        Collections.sort(lst, (a, b) -> Integer.compare(map.get(b), map.get(a)));
 
-                return Integer.compare(map.get(b), map.get(a));
+        for (Integer element : lst) {
+            for (int i = 0; i < map.get(element); i++) {
+                sb.append(element + " ");
             }
-        } );
-
-        Iterator<Integer> it = lst.iterator();
-        while (it.hasNext()) {
-            Integer element = it.next();
-            for(int i=0; i<map.get(element); i++){
-                sb.append(element+" ");    
-            }
-
         }
+        
         System.out.println(sb);        
     }
 }
