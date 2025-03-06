@@ -45,7 +45,7 @@ public class Main {
             for(int j = 0; j < row; j++){
                 for(int k = 0; k < col; k++){
                     if(graph[j][k] == 1 && !visited[j][k]){
-                        bfs(j,k);
+                        dfs(j,k);
                         answer ++;
                     }
                 }
@@ -64,7 +64,7 @@ public class Main {
 
         while(!q.isEmpty()){
             int [] cur = q.poll();
-            
+
             for(int i = 0; i < 4; i++){
                 
                 
@@ -81,7 +81,20 @@ public class Main {
             }
 
         }
+    }
 
-        
+    public static void dfs(int x, int y){
+        visited[x][y] = true;
+
+        for(int i = 0; i < 4; i++){
+            int nx = dx[i] + x;
+            int ny = dy[i] + y;
+
+            if(nx >= 0 && nx < row && ny >= 0 && ny < col){
+                if(graph[nx][ny] == 1 && !visited[nx][ny]){
+                    dfs(nx,ny);
+                }
+            }
+        }
     }
 }
