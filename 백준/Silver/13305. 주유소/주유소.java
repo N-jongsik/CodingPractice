@@ -9,7 +9,7 @@ public class Main{
 
        StringTokenizer st = new StringTokenizer(br.readLine());
 
-       int [] distance = new int [N-1];
+       long [] distance = new long [N-1];
 
        for(int i = 0; i < N-1; i++){
         distance[i] = Integer.parseInt(st.nextToken());
@@ -17,20 +17,20 @@ public class Main{
 
        st = new StringTokenizer(br.readLine());
 
-       int [] cost = new int[N];
+       long [] cost = new long[N];
 
        for(int i = 0; i < N; i++){
         cost[i] = Integer.parseInt(st.nextToken());
        }
 
-       int minCost = Integer.MAX_VALUE;
-       int sum = 0;
+       long minCost = cost[0];
+       long sum = 0;
 
        for(int i = 0; i < N-1; i++){
         if(cost[i] < minCost){
             minCost = cost[i];
         }
-        sum += (minCost * distance[i]);
+        sum += (long)(minCost * distance[i]);
        }
 
        System.out.println(sum);
